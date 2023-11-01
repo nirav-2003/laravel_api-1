@@ -46,7 +46,8 @@ class HomeController extends Controller
         $data = [
             'status' => 200,
             'post' => $post,
-            'message' => 'All Post'
+            'message' => 'All Post',
+            'nirav' => 'msg'
         ];
         return response()->json([$data, 200]);
     }
