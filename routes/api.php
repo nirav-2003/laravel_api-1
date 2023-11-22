@@ -19,6 +19,22 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/home', [HomeController::class, 'index']);
+Route::get('/sd', [HomeController::class, 'index']);
 // Route::post('/home', [HomeController::class, 'saveData']);
-Route::post('/home', [HomeController::class, 'getuser']);
+
+Route::get('/home1/{id}', [HomeController::class, 'deletePost']);
+
+Route::put('/home/updatedata/{id}', [HomeController::class, 'updatedata']);
+
+Route::post('/fileupload', [HomeController::class, 'fileupload']);
+
+
+
+
+Route::post('/reg', [HomeController::class, 'registration']);
+
+Route::middleware('auth:api')->group(function () {
+    Route::get('/home/{id?}', [HomeController::class, 'getuser']);
+});
+
+Route::post('/log', [HomeController::class, 'log']);

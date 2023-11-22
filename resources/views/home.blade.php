@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+    
     <form method="POST" style="text-align: center">
         @csrf
         <label for="fname">Post</label><br>
